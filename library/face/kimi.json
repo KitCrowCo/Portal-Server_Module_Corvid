@@ -1,0 +1,113 @@
+{
+ "name": "Kimi",
+ "icon": "&#x1F4DA;",
+ "order": 30,
+ "about": "Knowledge groups: make them, fill them from files and folders, see what they hold, and ask them.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "ask",
+   "name": "Ask",
+   "main": [
+    {
+     "panel": "conversation",
+     "pipeline": "chat_with_knowledge",
+     "answer": "text",
+     "thinking": "thinking",
+     "inputs": {
+      "system": "Answer from what the knowledge group holds. When it holds nothing on the question, say so."
+     },
+     "show": {
+      "think": "advanced"
+     }
+    }
+   ],
+   "left": [
+    {
+     "panel": "conversations",
+     "title": "Conversations"
+    }
+   ],
+   "right": [
+    {
+     "panel": "params",
+     "title": "This conversation"
+    },
+    {
+     "panel": "roles",
+     "title": "Who answers, from which group"
+    }
+   ]
+  },
+  {
+   "id": "groups",
+   "name": "Groups",
+   "main": [
+    {
+     "panel": "assets",
+     "title": "Knowledge groups",
+     "kind": "knowledge"
+    }
+   ]
+  },
+  {
+   "id": "holds",
+   "name": "What they hold",
+   "main": [
+    {
+     "panel": "records",
+     "title": "Documents",
+     "list": "knowledge_documents",
+     "in": "documents",
+     "status": "knowledge_status",
+     "remove": "knowledge_remove",
+     "id": "id",
+     "columns": {
+      "file": "file_path",
+      "state": "status",
+      "begins": "content_summary"
+     },
+     "cancel": "knowledge_cancel",
+     "retry": "knowledge_retry",
+     "service": "knowledge:{asset}"
+    }
+   ]
+  },
+  {
+   "id": "graph",
+   "name": "Graph",
+   "main": [
+    {
+     "panel": "graph",
+     "title": "What it knows, and how it links",
+     "graph": "knowledge_graph",
+     "labels": "knowledge_labels",
+     "type": "properties.entity_type",
+     "info": "properties.description",
+     "joins": "<SEP>"
+    }
+   ]
+  },
+  {
+   "id": "add",
+   "name": "Add and sync",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Add to a group, ask it once",
+     "groups": [
+      "knowledge"
+     ],
+     "show": {
+      "strip": "advanced",
+      "skip": "advanced",
+      "code": "advanced",
+      "code_chars": "advanced"
+     }
+    }
+   ]
+  }
+ ]
+}

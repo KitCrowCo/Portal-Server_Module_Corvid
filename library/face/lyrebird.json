@@ -1,0 +1,70 @@
+{
+ "name": "Lyrebird",
+ "icon": "&#x1F426;",
+ "order": 37,
+ "about": "Talk and listen: hold the microphone to talk, or the phone for a hands-free call; answers to spoken words are spoken.",
+ "profiles": [
+  "default"
+ ],
+ "chat": {
+  "voice": true,
+  "show_info": false,
+  "show_model": false,
+  "placeholder": "Type, hold the microphone to talk, or the phone for a hands-free call (Ctrl+Enter sends)"
+ },
+ "views": [
+  {
+   "id": "talk",
+   "name": "Talk",
+   "main": [
+    {
+     "panel": "conversation",
+     "pipeline": "chat_turn",
+     "pipelines": [
+      "chat_turn",
+      "chat_with_knowledge"
+     ],
+     "hear": "hear",
+     "speak": "speak",
+     "answer": "text",
+     "thinking": "thinking",
+     "show": {
+      "think": "advanced"
+     },
+     "inputs": {
+      "system": "You are speaking aloud with the person. Answer in short spoken sentences: no lists, tables or code unless asked."
+     }
+    }
+   ],
+   "left": [
+    {
+     "panel": "conversations",
+     "title": "Conversations"
+    }
+   ],
+   "right": [
+    {
+     "panel": "params",
+     "title": "This conversation"
+    },
+    {
+     "panel": "roles",
+     "title": "Who answers"
+    }
+   ]
+  },
+  {
+   "id": "tests",
+   "name": "Hear and say",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Try listening and speaking",
+     "groups": [
+      "voice"
+     ]
+    }
+   ]
+  }
+ ]
+}

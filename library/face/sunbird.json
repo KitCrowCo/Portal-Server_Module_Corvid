@@ -1,0 +1,51 @@
+{
+ "name": "Sunbird",
+ "icon": "&#x1F305;",
+ "order": 35,
+ "about": "Pictures and clips: describe one and it is made; what is made is kept in a gallery.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "make",
+   "name": "Make",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Make",
+     "groups": [
+      "images"
+     ],
+     "show": {
+      "steps": "advanced",
+      "guidance": "advanced",
+      "seed": "advanced",
+      "loras": "advanced",
+      "space": "advanced",
+      "folder": "advanced",
+      "roles": "advanced"
+     }
+    }
+   ],
+   "right": [
+    {
+     "panel": "gallery",
+     "title": "Made",
+     "space": "media"
+    }
+   ]
+  },
+  {
+   "id": "gallery",
+   "name": "Gallery",
+   "main": [
+    {
+     "panel": "gallery",
+     "title": "Made",
+     "space": "media"
+    }
+   ]
+  }
+ ]
+}

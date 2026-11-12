@@ -1,0 +1,27 @@
+{
+ "name": "Work",
+ "icon": "&#x1F4CB;",
+ "order": 20,
+ "about": "Hand off work as a pipeline, follow it, and decide on what it proposes.",
+ "profiles": [
+  "default"
+ ],
+ "main": [
+  {
+   "panel": "runs",
+   "title": "Pipelines and their runs",
+   "groups": [
+    "documents",
+    "knowledge",
+    "tools"
+   ],
+   "show": {
+    "roles": "advanced"
+   }
+  },
+  {
+   "panel": "review",
+   "title": "Proposed changes"
+  }
+ ]
+}

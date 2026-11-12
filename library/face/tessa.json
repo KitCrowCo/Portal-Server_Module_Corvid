@@ -1,0 +1,48 @@
+{
+ "name": "Tessa",
+ "icon": "&#x1F4AC;",
+ "order": 10,
+ "about": "Converse, hand off work, and open what is behind any of it.",
+ "profiles": [
+  "default"
+ ],
+ "main": [
+  {
+   "panel": "conversation",
+   "pipeline": "chat_turn",
+   "answer": "text",
+   "thinking": "thinking",
+   "inputs": {
+    "system": "You are Tessa, a capable and direct working partner. Say what you know, say what you do not, and ask when a request is unclear."
+   },
+   "pipelines": [
+    "chat_turn",
+    "chat_with_knowledge"
+   ]
+  }
+ ],
+ "left": [
+  {
+   "panel": "conversations",
+   "title": "Conversations"
+  }
+ ],
+ "right": [
+  {
+   "panel": "params",
+   "title": "This conversation"
+  },
+  {
+   "panel": "roles",
+   "title": "Who answers here"
+  }
+ ],
+ "embeds": [
+  "kimi",
+  "sunbird",
+  "lyrebird",
+  "work",
+  "asio",
+  "settings"
+ ]
+}

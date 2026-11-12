@@ -1,0 +1,75 @@
+{
+ "name": "Settings",
+ "icon": "&#x2699;",
+ "order": 90,
+ "about": "Where work can be done and who fills which role.",
+ "views": [
+  {
+   "id": "work",
+   "name": "Providers and roles",
+   "main": [
+    {
+     "panel": "providers",
+     "title": "1. Providers"
+    },
+    {
+     "panel": "bindings",
+     "title": "2. Who fills which role",
+     "profile": "default"
+    },
+    {
+     "panel": "limits",
+     "title": "3. Limits"
+    }
+   ],
+   "right": [
+    {
+     "panel": "guide",
+     "title": "Getting it to work",
+     "profile": "default"
+    }
+   ]
+  },
+  {
+   "id": "machines",
+   "name": "Machines",
+   "main": [
+    {
+     "panel": "machines",
+     "title": "What each machine runs"
+    },
+    {
+     "panel": "assets",
+     "title": "Model sources each machine uses",
+     "kind": "source"
+    }
+   ],
+   "right": [
+    {
+     "panel": "guide",
+     "title": "Getting it to work",
+     "profile": "default"
+    }
+   ]
+  },
+  {
+   "id": "library",
+   "name": "Library",
+   "main": [
+    {
+     "panel": "library",
+     "title": "Library (as stored)",
+     "kinds": [
+      "pipeline",
+      "bindings",
+      "provider",
+      "translator",
+      "space",
+      "policy",
+      "face"
+     ]
+    }
+   ]
+  }
+ ]
+}
