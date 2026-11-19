@@ -1,0 +1,102 @@
+{
+ "name": "Asio",
+ "icon": "&#x1F4CF;",
+ "order": 40,
+ "about": "Measurement: what to measure, what was measured, and what was used.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "now",
+   "name": "Now",
+   "main": [
+    {
+     "panel": "now",
+     "title": "What is under way"
+    }
+   ]
+  },
+  {
+   "id": "resources",
+   "name": "Resources",
+   "main": [
+    {
+     "panel": "resources",
+     "title": "What is available, measured"
+    }
+   ],
+   "right": [
+    {
+     "panel": "providers",
+     "title": "Connections"
+    }
+   ]
+  },
+  {
+   "id": "measure",
+   "name": "Measure",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Measurement sets",
+     "groups": [
+      "measurement"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chart",
+   "name": "Charts",
+   "main": [
+    {
+     "panel": "chart",
+     "title": "One figure against another",
+     "plan": "measure_text",
+     "x": "item.tokens",
+     "y": "tps",
+     "by": "asset",
+     "split": "item.run",
+     "logx": "1"
+    }
+   ]
+  },
+  {
+   "id": "usage",
+   "name": "Usage",
+   "main": [
+    {
+     "panel": "usage",
+     "title": "What was used",
+     "since": "week"
+    }
+   ]
+  },
+  {
+   "id": "models",
+   "name": "Pool and models",
+   "main": [
+    {
+     "panel": "fits",
+     "title": "What the machines hold, and what fits where"
+    },
+    {
+     "panel": "assets",
+     "title": "Model files brought onto machines",
+     "kind": "download"
+    }
+   ]
+  },
+  {
+   "id": "report",
+   "name": "Report",
+   "main": [
+    {
+     "panel": "report",
+     "title": "How this set-up stands"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,359 @@
+{
+ "name": "Sunbird",
+ "icon": "&#x1F305;",
+ "order": 35,
+ "about": "Pictures and clips. Prompts are kept (left) and encoded apart from painting: Save keeps a prompt without encoding it, Encode makes it ready, and a ready prompt is painted from its kept encoding - again and again, on any machine, with any image model and settings - with no encoder needed.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "make",
+   "name": "Make",
+   "left": [
+    {
+     "panel": "prompts",
+     "title": "Prompts"
+    },
+    {
+     "panel": "prompt",
+     "title": "The chosen prompt"
+    }
+   ],
+   "main": [
+    {
+     "panel": "make",
+     "title": "Make an image from the chosen prompt",
+     "pipeline": "image_make",
+     "groups": [
+      "images"
+     ],
+     "show": {
+      "steps": "advanced",
+      "guidance": "advanced",
+      "seed": "advanced",
+      "loras": "shown",
+      "space": "advanced",
+      "folder": "advanced",
+      "roles": "advanced",
+      "max_len": "fixed",
+      "truncate": "fixed",
+      "shift": "advanced",
+      "offload": "advanced",
+      "vae_tiling": "advanced",
+      "saved": "fixed",
+      "prompt": "fixed",
+      "role.encoder": "fixed"
+     },
+     "inputs": {
+      "prompt": ""
+     },
+     "inputs_from": {
+      "saved": "prompt",
+      "max_len": "prompt.max_len",
+      "truncate": "prompt.truncate"
+     },
+     "pins_from": {
+      "encoder": "prompt.encoder"
+     }
+    },
+    {
+     "panel": "latest",
+     "title": "Latest",
+     "space": "media",
+     "folder": "images"
+    }
+   ],
+   "right": [
+    {
+     "panel": "status",
+     "title": "Painter",
+     "pipeline": "image_make",
+     "role": "painter",
+     "info": "image_status",
+     "progress": "image_progress",
+     "actions": [
+      {
+       "name": "image_load",
+       "label": "Load",
+       "model": "model_path",
+       "about": "Loads the model this would paint with now, before any work"
+      },
+      {
+       "name": "image_unload",
+       "label": "Unload",
+       "about": "Frees the GPU memory; the program stays up"
+      },
+      {
+       "name": "image_stop",
+       "label": "Stop painting",
+       "about": "Stops the picture being painted at its next step"
+      },
+      {
+       "name": "image_clear_error",
+       "label": "Clear error"
+      }
+     ],
+     "warm": true,
+     "inputs": {
+      "prompt": ""
+     },
+     "inputs_from": {
+      "saved": "prompt",
+      "max_len": "prompt.max_len",
+      "truncate": "prompt.truncate"
+     },
+     "pins_from": {
+      "encoder": "prompt.encoder"
+     }
+    },
+    {
+     "panel": "status",
+     "title": "Encoder",
+     "pipeline": "image_encode",
+     "role": "encoder",
+     "program": "text_encoder",
+     "warm": true,
+     "inputs_from": {
+      "saved": "prompt",
+      "max_len": "prompt.max_len",
+      "truncate": "prompt.truncate"
+     },
+     "pins_from": {
+      "encoder": "prompt.encoder"
+     }
+    },
+    {
+     "panel": "progress",
+     "title": "Under way and done",
+     "groups": [
+      "images"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "inpaint",
+   "name": "Change",
+   "left": [
+    {
+     "panel": "prompts",
+     "title": "Prompts"
+    },
+    {
+     "panel": "prompt",
+     "title": "The chosen prompt"
+    }
+   ],
+   "main": [
+    {
+     "panel": "make",
+     "title": "Change a picture with the chosen prompt: whole, or a painted area",
+     "pipeline": "image_inpaint",
+     "groups": [
+      "images"
+     ],
+     "show": {
+      "steps": "advanced",
+      "guidance": "advanced",
+      "seed": "advanced",
+      "loras": "shown",
+      "space": "advanced",
+      "folder": "advanced",
+      "roles": "advanced",
+      "max_len": "fixed",
+      "truncate": "fixed",
+      "shift": "advanced",
+      "offload": "shown",
+      "vae_tiling": "advanced",
+      "saved": "fixed",
+      "prompt": "fixed",
+      "from_space": "advanced",
+      "role.encoder": "fixed",
+      "strength": "shown",
+      "area": "shown"
+     },
+     "inputs": {
+      "prompt": ""
+     },
+     "inputs_from": {
+      "saved": "prompt",
+      "max_len": "prompt.max_len",
+      "truncate": "prompt.truncate"
+     },
+     "pins_from": {
+      "encoder": "prompt.encoder"
+     }
+    }
+   ],
+   "right": [
+    {
+     "panel": "status",
+     "title": "Painter",
+     "pipeline": "image_make",
+     "role": "painter",
+     "info": "image_status",
+     "progress": "image_progress",
+     "actions": [
+      {
+       "name": "image_load",
+       "label": "Load",
+       "model": "model_path",
+       "about": "Loads the model this would paint with now, before any work"
+      },
+      {
+       "name": "image_unload",
+       "label": "Unload",
+       "about": "Frees the GPU memory; the program stays up"
+      },
+      {
+       "name": "image_stop",
+       "label": "Stop painting",
+       "about": "Stops the picture being painted at its next step"
+      },
+      {
+       "name": "image_clear_error",
+       "label": "Clear error"
+      }
+     ],
+     "warm": true,
+     "inputs": {
+      "prompt": ""
+     },
+     "inputs_from": {
+      "saved": "prompt",
+      "max_len": "prompt.max_len",
+      "truncate": "prompt.truncate"
+     },
+     "pins_from": {
+      "encoder": "prompt.encoder"
+     }
+    },
+    {
+     "panel": "status",
+     "title": "Encoder",
+     "pipeline": "image_encode",
+     "role": "encoder",
+     "program": "text_encoder",
+     "warm": true,
+     "inputs_from": {
+      "saved": "prompt",
+      "max_len": "prompt.max_len",
+      "truncate": "prompt.truncate"
+     },
+     "pins_from": {
+      "encoder": "prompt.encoder"
+     }
+    },
+    {
+     "panel": "progress",
+     "title": "Under way and done",
+     "groups": [
+      "images"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "more",
+   "name": "Clips",
+   "main": [
+    {
+     "panel": "make",
+     "title": "Make a clip from the chosen prompt: from words, or from a start frame (and an end frame)",
+     "pipeline": "clip_make",
+     "groups": [
+      "images"
+     ],
+     "inputs_from": {
+      "prompt": "prompt.text"
+     },
+     "show": {
+      "roles": "advanced",
+      "space": "advanced",
+      "folder": "advanced",
+      "seed": "advanced",
+      "from_space": "advanced",
+      "prompt": "fixed"
+     }
+    },
+    {
+     "panel": "latest",
+     "title": "Latest",
+     "space": "media",
+     "folder": "clips"
+    }
+   ],
+   "right": [
+    {
+     "panel": "status",
+     "title": "Animator (the image program, making clips)",
+     "pipeline": "clip_make",
+     "role": "animator",
+     "info": "image_status",
+     "progress": "image_progress",
+     "actions": [
+      {
+       "name": "image_unload",
+       "label": "Unload",
+       "about": "Frees the GPU memory; the program stays up"
+      },
+      {
+       "name": "image_stop",
+       "label": "Stop painting",
+       "about": "Stops the picture being painted at its next step"
+      },
+      {
+       "name": "image_clear_error",
+       "label": "Clear error"
+      }
+     ],
+     "warm": false
+    },
+    {
+     "panel": "progress",
+     "title": "Under way and done",
+     "groups": [
+      "images"
+     ]
+    }
+   ],
+   "left": [
+    {
+     "panel": "prompts",
+     "title": "Prompts"
+    },
+    {
+     "panel": "prompt",
+     "title": "The chosen prompt"
+    }
+   ]
+  },
+  {
+   "id": "gallery",
+   "name": "Gallery",
+   "main": [
+    {
+     "panel": "gallery",
+     "title": "Made",
+     "space": "media"
+    }
+   ],
+   "right": []
+  },
+  {
+   "id": "library",
+   "name": "Prompts as stored",
+   "main": [
+    {
+     "panel": "library",
+     "title": "Kept prompts",
+     "kinds": [
+      "image_prompt"
+     ]
+    }
+   ],
+   "right": []
+  }
+ ]
+}

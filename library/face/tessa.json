@@ -1,0 +1,125 @@
+{
+ "name": "Tessa",
+ "icon": "&#x1F4AC;",
+ "order": 10,
+ "about": "The overarching assistant and its lab: converse with any pipeline, knowledge and model; run and watch any pipeline step by step; agents; and build and tune the pipelines and modes everything else uses.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "chat",
+   "name": "Converse",
+   "main": [
+    {
+     "panel": "conversation",
+     "pipeline": "chat_turn",
+     "answer": "text",
+     "thinking": "thinking",
+     "inputs": {
+      "system": "You are Tessa, a capable and direct working partner. Say what you know, say what you do not, and ask when a request is unclear."
+     },
+     "pipelines": [
+      "chat_turn",
+      "chat_with_knowledge",
+      "agent_turn"
+     ],
+     "modes": "*"
+    }
+   ],
+   "left": [
+    {
+     "panel": "conversations",
+     "title": "Conversations"
+    }
+   ],
+   "right": [
+    {
+     "panel": "params",
+     "title": "This conversation"
+    },
+    {
+     "panel": "roles",
+     "title": "Who answers here"
+    }
+   ]
+  },
+  {
+   "id": "lab",
+   "name": "Lab",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Run any pipeline, every part shown",
+     "show": {}
+    }
+   ]
+  },
+  {
+   "id": "agents",
+   "name": "Agents",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Agents: tasks worked with tools until finished; what they propose waits for review",
+     "pipelines": [
+      "agent_task",
+      "agent_turn",
+      "web_research"
+     ],
+     "show": {}
+    }
+   ],
+   "right": [
+    {
+     "panel": "review",
+     "title": "Proposed changes to review"
+    },
+    {
+     "panel": "library",
+     "title": "Modes",
+     "kinds": [
+      "mode"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "build",
+   "name": "Build",
+   "main": [
+    {
+     "panel": "flow",
+     "part": "picture"
+    },
+    {
+     "panel": "library",
+     "title": "Pipelines and what they use",
+     "kinds": [
+      "pipeline",
+      "mode",
+      "prompt",
+      "context",
+      "skill",
+      "pool",
+      "kind"
+     ]
+    }
+   ],
+   "left": [
+    {
+     "panel": "flow",
+     "part": "list",
+     "title": "Pipelines"
+    }
+   ],
+   "right": [
+    {
+     "panel": "flow",
+     "part": "step",
+     "title": "Step"
+    }
+   ]
+  }
+ ]
+}

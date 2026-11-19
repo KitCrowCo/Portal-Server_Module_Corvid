@@ -1,0 +1,81 @@
+{
+ "name": "Workbench",
+ "icon": "&#x1F6E0;",
+ "order": 25,
+ "under": "tessa",
+ "about": "Working with an AI member of the household on the portal and its projects: you say what you want or what is broken; it keeps the issues and plans in the project, works them or hands them on, and proposes each change. You accept or decline in Review. What it may reach is its profile (Members).",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "talk",
+   "name": "Talk",
+   "main": [
+    {
+     "panel": "conversation",
+     "pipeline": "orchestrator",
+     "answer": "text",
+     "pipelines": [
+      "orchestrator"
+     ]
+    }
+   ],
+   "left": [
+    {
+     "panel": "conversations",
+     "title": "Conversations"
+    }
+   ],
+   "right": [
+    {
+     "panel": "member",
+     "title": "What it has"
+    },
+    {
+     "panel": "params",
+     "title": "This conversation"
+    },
+    {
+     "panel": "roles",
+     "title": "Its models"
+    }
+   ]
+  },
+  {
+   "id": "review",
+   "name": "Review",
+   "main": [
+    {
+     "panel": "review",
+     "title": "Changes it proposed to the files"
+    }
+   ],
+   "right": [
+    {
+     "panel": "runs",
+     "title": "Its work",
+     "pipelines": [
+      "orchestrator",
+      "agent_task"
+     ],
+     "show": {}
+    }
+   ]
+  },
+  {
+   "id": "members",
+   "name": "Members",
+   "main": [
+    {
+     "panel": "library",
+     "title": "AI members, their skills",
+     "kinds": [
+      "agent",
+      "skill"
+     ]
+    }
+   ]
+  }
+ ]
+}

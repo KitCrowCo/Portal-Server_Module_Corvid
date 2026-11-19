@@ -1,0 +1,44 @@
+{
+ "name": "Athena",
+ "icon": "&#x1F989;",
+ "order": 5,
+ "about": "Ask, and get an answer from what is known.",
+ "profiles": [
+  "default"
+ ],
+ "main": [
+  {
+   "panel": "conversation",
+   "pipeline": "chat_with_knowledge",
+   "answer": "text",
+   "thinking": "thinking",
+   "show": {
+    "*": "fixed",
+    "think": "shown"
+   },
+   "inputs": {
+    "system": "You are Athena. Answer clearly and briefly from what the knowledge group holds; say plainly when it holds nothing on the question."
+   },
+   "pipelines": [
+    "chat_with_knowledge",
+    "chat_turn"
+   ]
+  }
+ ],
+ "right": [
+  {
+   "panel": "params",
+   "title": "Options"
+  }
+ ],
+ "chat": {
+  "show_info": false,
+  "show_model": false
+ },
+ "left": [
+  {
+   "panel": "conversations",
+   "title": "Conversations"
+  }
+ ]
+}

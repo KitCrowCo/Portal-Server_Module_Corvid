@@ -1,0 +1,126 @@
+{
+ "name": "Settings",
+ "icon": "&#x2699;",
+ "order": 90,
+ "about": "What each need would use now, optional defaults and limits, the machines and their connections, and the library as stored.",
+ "views": [
+  {
+   "id": "needs",
+   "name": "Needs",
+   "main": [
+    {
+     "panel": "needs",
+     "title": "What each pipeline needs, and what would do it now",
+     "profile": "default"
+    }
+   ],
+   "right": [
+    {
+     "panel": "guide",
+     "title": "Getting it to work",
+     "profile": "default"
+    }
+   ]
+  },
+  {
+   "id": "defaults",
+   "name": "Defaults and limits",
+   "main": [
+    {
+     "panel": "bindings",
+     "title": "Defaults (optional): what a need should use first",
+     "profile": "default"
+    },
+    {
+     "panel": "limits",
+     "title": "Limits"
+    }
+   ],
+   "right": [
+    {
+     "panel": "guide",
+     "title": "Getting it to work",
+     "profile": "default"
+    }
+   ]
+  },
+  {
+   "id": "machines",
+   "name": "Machines",
+   "main": [
+    {
+     "panel": "providers",
+     "title": "Connections: where each machine is, and its key"
+    },
+    {
+     "panel": "loading",
+     "title": "Loading and unloading"
+    },
+    {
+     "panel": "machines",
+     "title": "What each machine runs"
+    },
+    {
+     "panel": "assets",
+     "title": "Download a model file onto a machine (from a web address)",
+     "kind": "download"
+    }
+   ],
+   "right": [
+    {
+     "panel": "guide",
+     "title": "Getting it to work",
+     "profile": "default"
+    }
+   ]
+  },
+  {
+   "id": "models",
+   "name": "Models",
+   "main": [
+    {
+     "panel": "models",
+     "title": "Models, and where each copy is"
+    }
+   ]
+  },
+  {
+   "id": "routes",
+   "name": "Under the hood",
+   "main": [
+    {
+     "panel": "assets",
+     "title": "Routes a machine uses to pass work on (made by the portal when work is placed elsewhere; nothing to set up)",
+     "kind": "source"
+    }
+   ]
+  },
+  {
+   "id": "library",
+   "name": "Library",
+   "main": [
+    {
+     "panel": "library",
+     "title": "Library (as stored)",
+     "kinds": [
+      "pool",
+      "mode",
+      "pipeline",
+      "bindings",
+      "provider",
+      "translator",
+      "space",
+      "policy",
+      "face",
+      "setup",
+      "prompt",
+      "context",
+      "skill",
+      "schedule",
+      "kind"
+     ]
+    }
+   ]
+  }
+ ]
+}
