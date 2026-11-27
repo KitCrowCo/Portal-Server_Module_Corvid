@@ -1,0 +1,92 @@
+{
+ "name": "Lyrebird",
+ "icon": "&#x1F426;",
+ "order": 37,
+ "about": "Talk and listen: type, hold the microphone to talk, or the phone for a hands-free call. Several people may talk: a quick decision model tells what is meant for the assistant, waits when someone pauses mid-thought, and lets talk between people go by (kept as context). It can tell voices apart, answers in the language it is spoken to, and speaks each language with its own voice, sentence by sentence while the answer is written; saying stop (or Stop, or the speaker button) halts it. Hear and say is the lab: try voices, recognizers and voice making.",
+ "profiles": [
+  "default"
+ ],
+ "chat": {
+  "voice": true,
+  "show_info": false,
+  "show_model": false,
+  "placeholder": "Type, hold the microphone to talk, or the phone for a hands-free call (Ctrl+Enter sends)"
+ },
+ "views": [
+  {
+   "id": "talk",
+   "name": "Talk",
+   "main": [
+    {
+     "panel": "conversation",
+     "pipeline": "chat_turn",
+     "pipelines": [
+      "chat_turn",
+      "chat_with_knowledge"
+     ],
+     "hear": "hear",
+     "speak": "speak",
+     "answer": "text",
+     "thinking": "thinking",
+     "show": {
+      "think": "advanced"
+     },
+     "inputs": {
+      "system": "You are speaking aloud with the people in the room. Answer in short spoken sentences: no lists, tables or code unless asked. A spoken message may begin with who said it, like (Name): or (Name?): when that is only likely, or (another voice): - answer that person, and never write such a prefix yourself. Answer in the language you were spoken to in. When you say something in another language than the rest of your answer, wrap it in a language tag with its code, exactly like this: <lang code=\"zh\">你好</lang>. Tags are the one exception to the spoken style: write them exactly as shown; they are not read aloud.",
+      "think": false
+     },
+     "speak_typed": true,
+     "speech": {
+      "lang_voices": {
+       "zh": "kokoro:zf_xiaoxiao",
+       "ja": "kokoro:jf_alpha",
+       "es": "kokoro:ef_dora",
+       "fr": "kokoro:ff_siwis"
+      },
+      "listen": "aware",
+      "identify": true
+     }
+    }
+   ],
+   "left": [
+    {
+     "panel": "conversations",
+     "title": "Conversations"
+    }
+   ],
+   "right": [
+    {
+     "panel": "speech",
+     "title": "Speaking and listening"
+    },
+    {
+     "panel": "params",
+     "title": "This conversation"
+    },
+    {
+     "panel": "roles",
+     "title": "Who answers"
+    }
+   ]
+  },
+  {
+   "id": "tests",
+   "name": "Hear and say",
+   "main": [
+    {
+     "panel": "voice_lab",
+     "title": "Hear and say: try voices, recognizers and voice making"
+    }
+   ],
+   "right": [
+    {
+     "panel": "runs",
+     "title": "The voice pipelines (files from a space)",
+     "groups": [
+      "voice"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,129 @@
+{
+ "name": "Tessa",
+ "icon": "&#x1F4AC;",
+ "order": 10,
+ "about": "Tessa, the portal's AI as one entity with one stream that is never switched or emptied. Collab: the projects on the left are what is set before it (pointers to chats, runs and views, in the middle); the stream on the right is Tessa itself. Tessa: who it is and how it answers. Lab: how Tessa works with the pipelines and tools made in Designer. Agents: the members it can hand work to.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "collab",
+   "name": "Collab",
+   "main": [
+    {
+     "panel": "workspace"
+    }
+   ],
+   "left": [
+    {
+     "panel": "projects",
+     "title": "What we are working on (projects)"
+    }
+   ],
+   "right": [
+    {
+     "panel": "stream",
+     "inline": true,
+     "identity": "tessa",
+     "pipeline": "chat_turn",
+     "answer": "text",
+     "thinking": "thinking",
+     "inputs": {
+      "system": "You are Tessa, a capable and direct working partner. Say what you know, say what you do not, and ask when a request is unclear."
+     }
+    },
+    {
+     "panel": "trace",
+     "title": "Its work now: steps, tasks handed on, rounds"
+    }
+   ]
+  },
+  {
+   "id": "self",
+   "name": "Tessa",
+   "main": [
+    {
+     "panel": "library",
+     "title": "Who Tessa is: identity and the modes it can answer in",
+     "kinds": [
+      "identity",
+      "mode"
+     ]
+    },
+    {
+     "panel": "params",
+     "title": "How it answers now (values for its stream)"
+    },
+    {
+     "panel": "roles",
+     "title": "Who answers for it"
+    }
+   ],
+   "right": [
+    {
+     "panel": "library",
+     "title": "Contexts and skills it can be given",
+     "kinds": [
+      "context",
+      "skill"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lab",
+   "name": "Lab",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Try the pipelines Tessa works with, every part shown",
+     "show": {}
+    }
+   ],
+   "right": [
+    {
+     "panel": "review",
+     "title": "Proposed changes"
+    },
+    {
+     "panel": "library",
+     "title": "Schedules",
+     "kinds": [
+      "schedule"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "agents",
+   "name": "Agents",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Agents: tasks worked with tools until finished; what they propose waits for review",
+     "pipelines": [
+      "agent_task",
+      "agent_turn",
+      "web_research"
+     ],
+     "show": {}
+    }
+   ],
+   "right": [
+    {
+     "panel": "review",
+     "title": "Proposed changes to review"
+    },
+    {
+     "panel": "library",
+     "title": "AI members and modes",
+     "kinds": [
+      "agent",
+      "mode"
+     ]
+    }
+   ]
+  }
+ ]
+}

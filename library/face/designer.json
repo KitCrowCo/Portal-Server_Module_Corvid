@@ -1,0 +1,87 @@
+{
+ "name": "Designer",
+ "icon": "&#x1F9E9;",
+ "order": 50,
+ "about": "The tools pipelines are made of and the labs built with them: Build (steps), Parts (prompts, contexts, skills, kinds, translators, faces), Specialty (experimental and personalized pipelines); projects such as Workbench in the row above, each with its own views and a Design view.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "build",
+   "name": "Build",
+   "main": [
+    {
+     "panel": "flow",
+     "part": "picture"
+    },
+    {
+     "panel": "library",
+     "title": "Pipelines and what they use",
+     "kinds": [
+      "pipeline",
+      "mode",
+      "prompt",
+      "context",
+      "skill",
+      "pool",
+      "kind"
+     ]
+    }
+   ],
+   "left": [
+    {
+     "panel": "flow",
+     "part": "list",
+     "title": "Pipelines"
+    }
+   ],
+   "right": [
+    {
+     "panel": "flow",
+     "part": "step",
+     "title": "Step"
+    }
+   ]
+  },
+  {
+   "id": "parts",
+   "name": "Parts",
+   "main": [
+    {
+     "panel": "library",
+     "title": "Parts pipelines are made of",
+     "kinds": [
+      "prompt",
+      "context",
+      "skill",
+      "translator",
+      "kind",
+      "face",
+      "policy",
+      "space"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "specialty",
+   "name": "Specialty",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Specialty and experimental pipelines and their runs",
+     "groups": [
+      "pose",
+      "simulation",
+      "tools",
+      "documents"
+     ]
+    }
+   ]
+  }
+ ],
+ "hosts": [
+  "workshop"
+ ]
+}

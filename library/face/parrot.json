@@ -1,0 +1,41 @@
+{
+ "name": "Parrot",
+ "icon": "&#x1F99C;",
+ "order": 65,
+ "about": "The outside: pages read, searches made and research done on the web, by the machine you choose for it. What comes back is marked as outside content. Which machine that is: the role \"research\" in Settings.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "web",
+   "name": "The web",
+   "main": [
+    {
+     "panel": "runs",
+     "title": "Read, search, research",
+     "groups": [
+      "outside"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "servers",
+   "name": "Other servers",
+   "main": [
+    {
+     "panel": "providers",
+     "title": "Machines and servers"
+    },
+    {
+     "panel": "library",
+     "title": "How other servers are spoken to",
+     "kinds": [
+      "translator"
+     ]
+    }
+   ]
+  }
+ ]
+}

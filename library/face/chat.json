@@ -1,0 +1,53 @@
+{
+ "name": "Chat",
+ "icon": "&#x1F5E8;",
+ "order": 12,
+ "about": "A plain conversation with whatever answers you choose (any chat pipeline, mode or model) - the floor every user has. Tessa > Collab is the conversation with Tessa itself.",
+ "profiles": [
+  "default"
+ ],
+ "views": [
+  {
+   "id": "chat",
+   "name": "Converse",
+   "main": [
+    {
+     "panel": "conversation",
+     "pipeline": "chat_turn",
+     "answer": "text",
+     "thinking": "thinking",
+     "inputs": {
+      "system": "You are Tessa, a capable and direct working partner. Say what you know, say what you do not, and ask when a request is unclear."
+     },
+     "pipelines": [
+      "chat_turn",
+      "chat_with_knowledge",
+      "agent_turn",
+      "orchestrator"
+     ],
+     "modes": "*"
+    }
+   ],
+   "left": [
+    {
+     "panel": "conversations",
+     "title": "Conversations"
+    }
+   ],
+   "right": [
+    {
+     "panel": "trace",
+     "title": "Its work now: steps, tasks handed on, rounds"
+    },
+    {
+     "panel": "params",
+     "title": "This conversation"
+    },
+    {
+     "panel": "roles",
+     "title": "Who answers here"
+    }
+   ]
+  }
+ ]
+}
